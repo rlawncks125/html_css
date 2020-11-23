@@ -1,0 +1,7 @@
+{
+    "liveSassCompile.settings.generateMap": false,
+
+    "liveSassCompile.settings.includeItems": [  
+        "/css/scss/ *.scss"
+    ]
+}
