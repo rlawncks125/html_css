@@ -1,3 +1,39 @@
+
+// size
+$headersize : 20px;
+$main_background : 1024px;
+$main_sub_backgoround : 355px;
+
+//  padding
+$hadder-padding : 30px 0px 20px 0px;
+$hadder_nav-padding : 14px 20px 36px ;
+$hadder_logo-padding : 15px 10px;
+$hadder_user_menu-padding : 5px 16px;
+$hadder_input-padding : 5px 12px;
+
+*{
+    box-sizing: border-box;
+}
+
+h1{
+  
+}
+h2{
+
+}
+p{
+
+}
+
 body{
-    background-color: green;
+    
+    
+
+}
+.warp{
+    max-width: 1180px;
+}
+.test{
+    width: 120px;
+    word-break: keep-all;
 }
