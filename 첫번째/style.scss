@@ -1,4 +1,3 @@
-
 // size
 $headersize : 20px;
 $main_background : 1024px;
@@ -6,34 +5,168 @@ $main_sub_backgoround : 355px;
 
 //  padding
 $hadder-padding : 30px 0px 20px 0px;
-$hadder_nav-padding : 14px 20px 36px ;
+$hadder_nav-padding : 14px 20px 36px;
 $hadder_logo-padding : 15px 10px;
 $hadder_user_menu-padding : 5px 16px;
 $hadder_input-padding : 5px 12px;
 
-*{
+
+// color
+$color-white : #ffffff;
+$color-blue : blue;
+$color-gray : rgb(63, 59, 59);
+
+* {
     box-sizing: border-box;
+    padding: 0;
+    margin : 0;
 }
 
-h1{
-  
-}
-h2{
-
-}
-p{
-
+a{
+    text-decoration: none;
+    color: $color-white;
 }
 
-body{
-    
-    
+h1 {}
 
+h2 {}
+
+p {}
+
+body {
+    text-align: center;
+    background-color: green;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: bold;
 }
-.warp{
+
+.warp {
     max-width: 1180px;
+    margin: auto;
 }
-.test{
+
+.test {
     width: 120px;
     word-break: keep-all;
 }
+
+// 헤더
+.header {
+    position: sticky;
+    top: 0px;
+    height: 153px;
+    margin-bottom: 20px;
+    padding: $hadder-padding;
+
+    @mixin search_input-style($color){
+        border: solid 1px $color;
+        padding: 5px 12px;
+        color: $color;
+        
+    } 
+
+    .head{
+        height: 75%;
+        display: flex;
+        justify-content: space-between;
+        
+        .hadder_barnd{
+            width: 243px;
+            height: 50px;
+            display: flex;
+            padding: $hadder_logo-padding;
+            margin: 0 24px 0 -10px;
+            transform: translateY(-15px);
+            .brand_logo{                   
+                width: 50px;
+                height: 50px;
+            }
+            p{            
+                margin-left: 13px;         
+                word-break: keep-all;
+                font-size: 18px;
+                text-align: left;
+            }
+            
+        }   
+        .navbar{
+            display: flex;          
+            float: right;            
+            & a{             
+                padding: $hadder_nav-padding;            
+                list-style: none;
+                font-size: 16px;          
+                
+                &:last-child{
+                    padding-right: 0px;
+                }
+            }
+        }  
+
+        &.active{
+            .head{
+                p{
+                    color : $color-blue;
+                }
+            }
+        }
+    }   
+    .login_search{
+        height: 32px;
+        display: flex;   
+        
+               
+        & a{
+            @include search_input-style($color-white);
+            width: 138px;
+            text-align: left;      
+            line-height: 16px;
+            background-color: transparent;
+        }
+        & form{
+            flex: 1;
+            display: flex;
+            justify-content: space-between;
+            background-color: $color-white;
+            @include search_input-style($color-white);
+            & input {
+                border: none;      
+                outline: none;
+                background-color: transparent;
+            }
+            & input[type=button]{
+                font-size: 14px;
+                cursor: pointer;
+            }
+            & input[type=search]{
+                font-size: 16px;
+            }
+        }
+
+       
+    }
+    
+    &.active{
+        background-color: $color-white;
+        .head{
+            .hadder_barnd{
+                p{
+                    color: $color-blue;
+                }
+            }
+            .navbar{
+                a{
+                    color: $color-gray;
+                }
+            }
+        }
+
+        .login_search{
+            & a,form{
+                @include search_input-style($color-blue);
+            }
+        }
+    }
+}
+
+// 메인

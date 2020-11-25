@@ -1,13 +1,158 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+body {
+  text-align: center;
+  background-color: green;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: bold;
 }
 
 .warp {
   max-width: 1180px;
+  margin: auto;
 }
 
 .test {
   width: 120px;
   word-break: keep-all;
+}
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  height: 153px;
+  margin-bottom: 20px;
+  padding: 30px 0px 20px 0px;
+}
+
+.header .head {
+  height: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header .head .hadder_barnd {
+  width: 243px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px 10px;
+  margin: 0 24px 0 -10px;
+  -webkit-transform: translateY(-15px);
+          transform: translateY(-15px);
+}
+
+.header .head .hadder_barnd .brand_logo {
+  width: 50px;
+  height: 50px;
+}
+
+.header .head .hadder_barnd p {
+  margin-left: 13px;
+  word-break: keep-all;
+  font-size: 18px;
+  text-align: left;
+}
+
+.header .head .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: right;
+}
+
+.header .head .navbar a {
+  padding: 14px 20px 36px;
+  list-style: none;
+  font-size: 16px;
+}
+
+.header .head .navbar a:last-child {
+  padding-right: 0px;
+}
+
+.header .head.active .head p {
+  color: blue;
+}
+
+.header .login_search {
+  height: 32px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.header .login_search a {
+  border: solid 1px #ffffff;
+  padding: 5px 12px;
+  color: #ffffff;
+  width: 138px;
+  text-align: left;
+  line-height: 16px;
+  background-color: transparent;
+}
+
+.header .login_search form {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background-color: #ffffff;
+  border: solid 1px #ffffff;
+  padding: 5px 12px;
+  color: #ffffff;
+}
+
+.header .login_search form input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.header .login_search form input[type=button] {
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.header .login_search form input[type=search] {
+  font-size: 16px;
+}
+
+.header.active {
+  background-color: #ffffff;
+}
+
+.header.active .head .hadder_barnd p {
+  color: blue;
+}
+
+.header.active .head .navbar a {
+  color: #3f3b3b;
+}
+
+.header.active .login_search a, .header.active .login_search form {
+  border: solid 1px blue;
+  padding: 5px 12px;
+  color: blue;
 }

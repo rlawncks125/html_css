@@ -6,28 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <div class="warp">
-            <nav>
-                <a href="#" class="hadder_barnd">
-                    <img src="" alt="" class="hadder_logo">
-                    서울특별시 도시재생지원센터
-                </a>
-                <ul class="navbar">
-                    <li><a href="#">센터소개</a></li>
-                    <li><a href="#">주요사업</a></li>
-                    <li><a href="#">지원사업</a></li>
-                    <li><a href="#">교육프로그램</a></li>
-                    <li><a href="#">월간 도시재생</a></li>
-                    <li><a href="#">아카이브</a></li>
-                    <li><a href="#">전국도시재생지원센터협의회</a></li>
-                </ul>
-            </nav>
+    <!-- 헤더 -->
+    <header class="header">
+        <div class="head warp">
+            <a href="#" class="hadder_barnd">
+                <img class="brand_logo" src="./images/브룩.jpg" alt="로고">
+                <p>서울특별시 도시재생지원센터</p>
+            </a>
+            <ul class="navbar">
+                <a href="#">센터소개</a>
+                <a href="#">주요사업</a>
+                <a href="#">지원사업</a>
+                <a href="#">교육프로그램</a>
+                <a href="#">월간 도시재생</a>
+                <a href="#">아카이브</a>
+                <a href="#">전국도시재생지원센터협의회</a>
+            </ul>
+        </div>
+        <div class="login_search warp">
+                <a href="#" class="login">Login</a>
+                <a href="#" class="Join">Join us</a>
+                <form class="search" action="">
+                    <input type="search" name="" id="" placeholder="검색어를 입력해주세요.">
+                    <input type="button" value="SEARCH 돋">
+                </form>
         </div>
     </header>
+    <!-- 메인 -->
     <section class="main">
         <div class="main_dsc">
             <p class="main_index">1</p>
@@ -52,6 +62,7 @@
             </div>
         </div>
     </section>
+    <!-- 중간 -->
     <section class="recent">
         <div class="recent_box">
             <p class="public_title">투어프로그램</p>
@@ -75,7 +86,9 @@
             <a href="#" class="more">READ MORE</a>
         </div>
     </section>
+    <!-- 베너 -->
     <section class="banner"></section>
+    <!-- 게시판 -->
     <section class="menulink">
         <div class="left_link">
             <p class="menulink_title">서울도시재생 이야기관</p>
@@ -109,6 +122,7 @@
             </a>
         </div>
     </section>
+    <!-- 푸터 -->
     <footer>
         <div class="footer_child">
             <a class="footer_brand">
@@ -119,8 +133,8 @@
                 <a href="#">개인정보보호방침</a>
             </div>
             <div class="footer_dsc">
-                <p>04520 서울특별시 중구 무교로 21(무교동 45)</p>  
-                <p>더 익스체인지 서울 12층</p>  
+                <p>04520 서울특별시 중구 무교로 21(무교동 45)</p>
+                <p>더 익스체인지 서울 12층</p>
                 <p>Tel: 02-6929-3297</p>
             </div>
             <p class="emial">ⓒ 2019 all rights reserved - SEOUL URBAN REGENERATION CENTER</p>
@@ -139,7 +153,7 @@
             </form>
             <input type="checkbox" name="agree" id=""> 개인정보 활용에 동의합니다.
         </div>
-    </footer>    
+    </footer>
 
 </body>
 
