@@ -2,7 +2,7 @@
 $headersize : 20px;
 $main_background : 1024px;
 $main_sub_backgoround : 355px;
-$max_width : 1180px;
+$max_width : 1200px;
 //  padding
 $hadder-padding : 30px 0px 20px 0px;
 $hadder_nav-padding : 14px 20px 36px;
@@ -10,13 +10,23 @@ $hadder_logo-padding : 15px 10px;
 $hadder_user_menu-padding : 5px 16px;
 $hadder_input-padding : 5px 12px;
 
-
 // color
 $color-white : #ffffff;
 $color-blue : #004098;
 $color-gray :#585e64;
 $color-black : #3f454b;
 $color-footer : #eef1f4;
+
+
+// media
+$screen-tablet : 786px;
+
+@mixin tablet {
+    @media ( max-width : $screen-tablet){
+        @content;
+    }
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -28,11 +38,6 @@ a {
     color: $color-white;
 }
 
-h1 {}
-
-h2 {}
-
-p {}
 
 body {
     text-align: center;
@@ -46,16 +51,26 @@ body {
     margin: auto;
 }
 
-.test {
-    width: 120px;
-    word-break: keep-all;
-}
-
 .public_title {
     color: $color-black;
     position: relative;
     margin-bottom: 24px;
     text-align: left;
+    
+    span{
+        font-size: 18px;
+    color: #3f454b;
+    font-weight: 500;
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom: 1;
+    display: inline;
+    background-color: #fff;
+    padding: 4px 8px 4px 0;
+    z-index: 5;
+    position: relative;
+    vertical-align: top;
+    }
     &::after {
         width: 100%; 
         // width JS 값 수정 하면 될거같음
@@ -66,7 +81,8 @@ body {
         background-color: $color-gray;
         margin-left: 3px;
         height: 2px;
-        transform: translateY(-4px);
+        bottom: -3px;
+        
     }
 }
 
@@ -92,7 +108,7 @@ body {
     }
 
     .head {
-        height: 75%;
+        height: 65%;
         display: flex;
         justify-content: space-between;
 
@@ -122,32 +138,29 @@ body {
             display: flex;
             float: right;
 
-            & a {
+            a {
                 padding: $hadder_nav-padding;
                 list-style: none;
                 font-size: 16px;
-
+                
                 &:last-child {
                     padding-right: 0px;
                 }
-            }
-        }
-
-        &.active {
-            .head {
-                p {
-                    color: $color-blue;
+                
+                &:hover{
+                    transform: scale(1.2);
                 }
             }
         }
+
+    
     }
 
     .login_search {
         height: 32px;
         display: flex;
 
-
-        & a {
+        a {
             @include search_input-style($color-white);
             width: 138px;
             text-align: left;
@@ -155,33 +168,39 @@ body {
             background-color: transparent;
         }
 
-        & form {
+        form {
             flex: 1;
             display: flex;
-            justify-content: space-between;
+            justify-content: start;
+            justify-items: center;
             background-color: $color-white;
             @include search_input-style($color-white);
 
-            & input {
+            input {
                 border: none;
                 outline: none;
                 background-color: transparent;
+            
             }
-
-            & input[type=button] {
-                font-size: 14px;
-                cursor: pointer;
-            }
-
-            & input[type=search] {
+            input[type=text] {
+                flex: 1;
+                width: 300px;
                 font-size: 16px;
-            }
+                
+            }         
+            input[type=button] {
+                font-size: 14px;
+                height: 100%;
+                cursor: pointer;          
+                
+            }    
+
         }
 
 
     }
 
-    &.active {
+    &.active , &:hover{
         background-color: $color-white;
 
         .head {
@@ -206,11 +225,50 @@ body {
             }
         }
     }
+
+    @include tablet(){
+
+        height: 200px;         
+        padding-top: 5px;     
+        
+        .head{
+            height: 80%;
+            max-width: none;
+            
+            .hadder_barnd{
+                transform: translateY(50%);
+            }
+        }
+       
+    }
 }
 
 // 메인
 .main {
     height: (1024px + 355px);
+    // swiper
+    .swiper-container{
+        position: relative;
+        .swiper-button-next , .swiper-button-prev{
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: transparent;            
+            bottom: 500px;
+            z-index: 20;
+            i{
+                font-size: 80px;
+                color: $color-blue;
+            }
+        }        
+        .swiper-button-next{
+            right: 130px;
+        }
+        .swiper-button-prev{
+            right: 530px;
+        }
+}
+
     // 메인 박스
     .main_bg {
         position: relative;
@@ -254,11 +312,8 @@ body {
                 font-size: 15px;
                 margin-bottom: 24px;
             }
-            .more{
-                
-                
-            }
         }
+    
     }
     // 서브 박스
     .main_sub {
@@ -270,14 +325,14 @@ body {
             font-family: 'Noto Sans KR', sans-serif;
             color: $color-white;
             &:nth-child(1) {
-                background-color: rgb(123, 33, 207);
+                background: url("/images/담장.jpg") center/cover;
                 .sub_warp {
                     float: right;
                     margin-right: 45px;
                 }
             }
             &:nth-child(2) {
-                background-color: rgb(92, 104, 37);
+                background: url("/images/과수원.jpg") center/cover ;
                 .sub_warp {
                     margin-left: 45px;
                 }
@@ -307,9 +362,45 @@ body {
                 position: absolute;
                 bottom: 50px;
             }
+            .public_title{
+                span{
+                    background-color: transparent;
+                }
+                &::after{
+                    width: 62%;
+                }
+            }
         }
-
+       
     }
+    @include tablet(){
+        height: 100%;
+
+        .main_sub{
+            flex-direction: column;
+            .sub_box{
+                flex: none;
+                height: 100%;
+
+                &:nth-child(1) {
+                    
+                    .sub_warp {
+                        float: left;
+                        margin-left: 45px;
+                    }
+                }
+                .more{
+                    height: 20px;
+                    right: 20px;
+                    top: 10px;
+                }
+            }
+            
+        }
+    }
+
+    // swiper
+    
 }
 
 
@@ -353,17 +444,27 @@ body {
                 font-size: 15px;
                 color: palevioletred;
             }
-        }
-}
+        }   
+        @include tablet(){
+            flex-direction: column;
+            .recent_box{
+                max-width: none;
+
+            }
+        }  
+       
+    }
+
 }
 
 
 // 베너
 
 .banner{
-    width: 100%;
+    width: 95%;
     height: 160px;
-    background: url("./images/banner.jpg") no-repeat;
+    background: url("./images/banner.jpg")  no-repeat;
+   
 }
 
 
@@ -373,7 +474,7 @@ body {
     display: flex;
     height: 570px;
     margin: 60px auto 130px;
-
+    color: $color-gray;
     // 왼쪽게시판
     .left_link{
         flex: 50%;
@@ -388,7 +489,7 @@ body {
             position: relative;
             width: 100%;
             height: 100%;
-            background-color: $color-gray;
+            background: url("/images/가가.png") center/cover no-repeat;
             padding: 40px;   
             text-align: left;
             .left_dsc{
@@ -402,8 +503,9 @@ body {
                 position: absolute;
                 left: 60px;
                 bottom: 60px;
+                color: $color-gray;
             }
-        }
+        }      
     }
 
     // 오른쪽게시판
@@ -448,10 +550,11 @@ body {
         }
         .map{
             width: 100%;
-            background-color: palegoldenrod;
+            background: url("/images/담장.jpg") center;
+            background-position: right;
             padding: 22px 30px;
             text-align: left;
-            color: $color-gray;
+            color: $color-white;
             .map_title{
                 font-size: 18px;
                 
@@ -464,6 +567,17 @@ body {
                 }
             }
 
+        }
+    }
+    @include tablet(){
+        flex-direction: column;
+        height: 100%;
+        margin-bottom: 40px;
+        .left_link{
+                flex: none;    
+                height: 600px;
+                margin-bottom: 20px;            
+                overflow: none;
         }
     }
 }
@@ -511,18 +625,35 @@ body {
         font-size: 15px;
     }
     .emiall{
-        margin-top: 80px;
-        font-size: 15px;
+        margin-top: 60px;
+        margin-bottom: 10px;
+        font-size: 12px;
     }
     .sns{
         display: flex;
         margin-bottom: 40px;
-        .logo{ 
+        a{ 
         display: block;
-        width: 50px;
-        height: 50px;
-        border: solid 1px black;
-        margin-right: 10px;
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+
+        i{
+            font-size: 40px;
+            width: 100%;    
+            height: 100%;
+            text-align: center;
+            
+            &[alt=유튜브]{
+                color: red;
+            }
+            &[alt=페이스북]{
+                color: blue;
+            }
+            &[alt=블로그]{
+                color: green;
+            }
+        }
         }
     }
     .subform{
@@ -548,5 +679,17 @@ body {
     input[type=checkbox]{
         margin-top: 10px;
     }
+
+    @include tablet(){
+        height: 100%;
+        .warp{
+            flex-direction: column-reverse;
+            
+        }
+        .emiall{
+            font-size: 13px;
+        }
+    }
 }
+
 
