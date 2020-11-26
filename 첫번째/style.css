@@ -302,7 +302,7 @@ body {
 }
 
 .main .main_sub .sub_box:nth-child(1) {
-  background: url("/images/담장.jpg") center/cover;
+  background: url("./images/담장.jpg") center/cover;
 }
 
 .main .main_sub .sub_box:nth-child(1) .sub_warp {
@@ -311,7 +311,7 @@ body {
 }
 
 .main .main_sub .sub_box:nth-child(2) {
-  background: url("/images/과수원.jpg") center/cover;
+  background: url("./images/과수원.jpg") center/cover;
 }
 
 .main .main_sub .sub_box:nth-child(2) .sub_warp {
@@ -475,7 +475,7 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  background: url("/images/가가.png") center/cover no-repeat;
+  background: url("./images/가가.png") center/cover no-repeat;
   padding: 40px;
   text-align: left;
 }
@@ -554,7 +554,7 @@ body {
 
 .menulink .right_link .map {
   width: 100%;
-  background: url("/images/담장.jpg") center;
+  background: url("./images/담장.jpg") center;
   background-position: right;
   padding: 22px 30px;
   text-align: left;
