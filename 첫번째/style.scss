@@ -246,36 +246,44 @@ body {
 // 메인
 .main {
     height: (1024px + 355px);
-    // swiper
+    
     .swiper-container{
-        position: relative;
-        .swiper-button-next , .swiper-button-prev{
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            background-color: transparent;            
-            bottom: 500px;
-            z-index: 20;
-            i{
-                font-size: 80px;
-                color: $color-blue;
+        width: 100%;
+        height: 1024px;
+        .swiper-wrapper{
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide {
+            height: 100%;
+            .main_bg[name=first]{
+                background : url("./images/sparks-265850_1920.jpg") center/cover;
             }
-        }        
-        .swiper-button-next{
-            right: 130px;
+            .main_bg[name=two]{
+                background : url("./images/city-336708_1920.jpg") center/cover;
+            }
+            .main_bg[name=three]{
+                background : url("./images/chicago-690364_1920.jpg") center/cover;
+            }
+            
         }
-        .swiper-button-prev{
-            right: 530px;
-        }
-}
-
+    .swiper-button-next{
+        right: 200px;
+    }
+    .swiper-button-prev{
+        left: auto;
+        right: 535px;
+    }
+    }
+    
+  
     // 메인 박스
     .main_bg {
         position: relative;
-        height: 1024px;
-        background: url("./images/sparks-265850_1920.jpg") center/cover;
-        z-index: 1;
-
+        height: 100%;
+        width: 100%;
+        z-index: 1;       
+       
         .main_box {
             position: absolute;
             width: 300px;
@@ -399,8 +407,6 @@ body {
         }
     }
 
-    // swiper
-    
 }
 
 

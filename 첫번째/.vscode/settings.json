@@ -3,5 +3,6 @@
 
     "liveSassCompile.settings.includeItems": [  
         "/css/scss/ *.scss"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

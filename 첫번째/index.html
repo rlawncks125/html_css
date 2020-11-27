@@ -5,14 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100&display=swap" rel="stylesheet">
-    <!-- <script src="https://kit.fontawesome.com/51cfe8b9d9.js" crossorigin="anonymous"></script> -->
+    <script src="https://kit.fontawesome.com/51cfe8b9d9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     
+
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+  <!-- Swuper js -->
+  <script type="module" src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+ 
     
-    <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 </head>
 
@@ -46,20 +51,47 @@
     <!-- 메인 -->
     <section class="main">
         <div class="swiper-container">
-            <div class="main_bg swiper-wrapper">
-                <div class="main_box swiper-slide">
-                    <p class="main_index">1</p>
-                    <h1 class="main_title">청주 문화제조창C 여행</h1>
-                    <p class="main_sub">버려진 담배 공장 부지에서, 문화예술의성지로</p>
-                    <p class="main_dsc">연간 100억 개비의 담배를 생산하던 청주의 대표 산업의 흔적위에 새로운 문화와 예술이 피어오르다.</p>
-                    <a href="#" class="more">READ MORE</a>
-                </div>
-             
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="main_bg" name="first">
+                        <div class="main_box">
+                            <p class="main_index">1</p>
+                            <h1 class="main_title">청주 문화제조창C 여행</h1>
+                            <p class="main_sub">버려진 담배 공장 부지에서, 문화예술의성지로</p>
+                            <p class="main_dsc">연간 100억 개비의 담배를 생산하던 청주의 대표 산업의 흔적위에 새로운 문화와 예술이 피어오르다.</p>
+                            <a href="#" class="more">READ MORE</a>
+                        </div>
+                    </div>
+                </div> 
+                <div class="swiper-slide">
+                    <div class="main_bg" name="two">
+                        <div class="main_box">
+                            <p class="main_index">2</p>
+                            <h1 class="main_title">청주 문화제조창C 여행</h1>
+                            <p class="main_sub">버려진 담배 공장 부지에서, 문화예술의성지로</p>
+                            <p class="main_dsc">연간 100억 개비의 담배를 생산하던 청주의 대표 산업의 흔적위에 새로운 문화와 예술이 피어오르다.</p>
+                            <a href="#" class="more">READ MORE</a>
+                        </div>
+                    </div>
+                </div> 
+                <div class="swiper-slide">
+                    <div class="main_bg" name="three">
+                        <div class="main_box">
+                            <p class="main_index">3</p>
+                            <h1 class="main_title">청주 문화제조창C 여행</h1>
+                            <p class="main_sub">버려진 담배 공장 부지에서, 문화예술의성지로</p>
+                            <p class="main_dsc">연간 100억 개비의 담배를 생산하던 청주의 대표 산업의 흔적위에 새로운 문화와 예술이 피어오르다.</p>
+                            <a href="#" class="more">READ MORE</a>
+                        </div>
+                    </div>
+                </div> 
+
+                
             </div>
 
-            <!--버튼 -->
-             <div class="swiper-button-prev"><i class="fas fa-arrow-left"></i></div>
-             <div class="swiper-button-next"><i class="fas fa-arrow-right"></i></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
 
         </div>
 
