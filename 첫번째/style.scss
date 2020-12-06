@@ -19,7 +19,7 @@ $color-footer : #eef1f4;
 
 
 // media
-$screen-tablet : 786px;
+$screen-tablet : 800px;
 
 @mixin tablet {
     @media ( max-width : $screen-tablet){
@@ -41,8 +41,7 @@ a {
 
 body {
     text-align: center;
-
-    font-weight: bold;
+    font-weight: bold;  
 }
 
 // font-family: 'Noto Sans KR', sans-serif;
@@ -136,6 +135,7 @@ body {
 
         .navbar {
             display: flex;
+            justify-items: center;
             float: right;
 
             a {
@@ -153,7 +153,15 @@ body {
             }
         }
 
-    
+    @include tablet(){
+        .hadder_barnd{
+            width: 150px;
+            p{
+                font-size: 15px;
+            }
+        }
+     
+    }
     }
 
     .login_search {
@@ -229,7 +237,7 @@ body {
     @include tablet(){
 
         height: 200px;         
-        padding-top: 5px;     
+        padding-top: 10px;     
         
         .head{
             height: 80%;
