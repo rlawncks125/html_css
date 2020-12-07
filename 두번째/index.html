@@ -4,12 +4,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="navbar navbar-expand-sm navbar-light fixed-top bg-transparent" style="border: 1px solid black;">
+        <a class="navbar-brand" href="#">OLLL<span style="font-size: 30px; color: red;">P</span>OLLL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="#">Pricing</a>
+          </div>
+        </div>
+      </nav>
+
+    <header>
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-color: rgb(120, 187, 31);">Slide 1</div>
+                <div class="swiper-slide" style="background-color: rgb(190, 54, 54);">Slide 2</div>
+                <div class="swiper-slide" style="background-color: rgb(40, 192, 116);">Slide 3</div>
+                <div class="swiper-slide" style="background-color: rgb(216, 45, 150);">Slide 4</div>
+                <div class="swiper-slide" style="background-color: rgb(186, 196, 51);">Slide 5</div>
+           
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </header>
+
+    <section class="first" id="first">
+        <div class="container-fluid h-100 row " >
+            <div class="fr-banner col-12 mt-10 col-md-6 ">1</div>
+            <div class="fr-banner col-12 mt-10 col-md-6 ">2</div>
+        </div>
+    </section>
+    <section class="two">
+        <div class="middle_banner row justify-content-center container-fluid">
+          <div class="m_banner col-md-3 p-0">
+            <a  href="#" class="banner_img">
+              <div class="link_hover"></div>
+            </a>  
+            <div class="m_banner_info">
+              <h2>대제목1</h2>
+              <p>소마엄어무어무어ㅓㅝㅇㅁㄴㅇㄴㅁㅇㅁㄴ워뭉 ㅇㅇㅁㅇ</p>
+            </div>
+          </div>
+          <div class="m_banner col-md-3 p-0">
+            <div class="m_banner_info">
+              <h2>대제목2</h2>
+              <p>asdafasdasdㅇㅁㄴㅇㄴㅁㅇㅁㄴ워뭉 ㅇㅇㅁㅇ</p>
+            </div>
+            <a  href="#" class="banner_img">
+              <div class="link_hover"></div>
+            </a>              
+          </div>
+          <div class="m_banner col-md-3 p-0">
+            <a  href="#" class="banner_img">
+              <div class="link_hover"></div>
+            </a>  
+            <div class="m_banner_info">
+              <h2>대제목3</h2>
+              <p>소마엄어cczcdadfadㅁddㅇㅇㅁ나안마ㅣ암ㄴ이ㅏasdasdasdalsd[pas d[ad[asdㅁㄴ암ㄴ;dasdasdㅇㅁㄴ워뭉 ㅇㅇㅁㅇ</p>
+            </div>
+          </div>
+          <div class="m_banner col-md-3 p-0">
+            <div class="m_banner_info">
+              <h2>대제목4</h2>
+              <p>소adrrqrrrqwrㅇㅇㅁㅇ</p>
+            </div>
+            <a  href="#" class="banner_img">
+              <div class="link_hover"></div>
+            </a>  
+          
+          </div>
+          
+       </div>
+
+    </section>
+    <section class="three" style="text-align: center;">
+      <div class="container-fluid">
+        <h1>온라인 문의</h1>
+        <form action="" class=" Inquiry">
+          <div class="Inquiry_info">
+            <label for="brand">회사명 : <input type="text" name="brand"></label>
+            <label for="name">이름 : <input type="text" name="name"></label>
+            <label for="phone">연락처 : <input type="text" name="phone"></label>
+            <label for="email">이메일 : <input type="email" name="email"></label>
+          </div>
+          <div class="Inquiry_text">
+            문의내용
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+          </div>
+        </form>
+      </div>
+
+    </section>
 
 
-    
     <!-- 제이쿼리 -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
@@ -19,6 +121,8 @@
     <!-- 부트스트랩 네이티브 -->
     <script src="./node_modules/bootstrap.native/dist/bootstrap-native.min.js"></script>
 
+    <!-- Swiper -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- 메인 -->
     <script src="main.js"></script>
 </body>

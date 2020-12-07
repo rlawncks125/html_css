@@ -15,3 +15,240 @@
 
 // // 옵션
 // @import "./node_modules/bootstrap-scss/badge";
+
+$banner_imges : (1 : "./images/나미.jpg" ,2 : "./images/상디.jpg" ,3 : "./images/조로.jpg" ,4 : "./images/우솝.jpg" ) ;
+
+body{
+    position: relative;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+// Swiper
+.swiper-container {
+    width: 100%;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+    
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+      }
+      .swiper-pagination{
+          transform: translateY(-150%);
+      }
+
+      .swiper-pagination-bullets .swiper-pagination-bullet{
+        position: relative;
+        bottom: 10px;
+        margin: 0 8px;
+      }
+      .swiper-pagination-bullet {
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #000;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.2);
+      
+        transition: transform 500ms ;
+
+        &.swiper-pagination-bullet-active {
+            color: #fff;
+            background: yellow;
+    
+            transform: scale(1.4);
+          }
+      }
+  
+      
+  }
+
+  .container-fluid{
+    max-width: 1600px;
+    margin: auto;
+  }
+
+
+//  섹션 원 
+  .first{
+    height: 100%;
+    padding: 10px 10px;
+    background-color: gray;
+      .fr-banner{
+        background-color: yellow;
+        border: 2px solid black;
+        height: 200px;
+        margin-top: 10px;
+    }
+  }
+
+  // 섹션 two
+  .two{
+    height: 80vw;
+
+  }
+
+    .middle_banner {
+      height: 25%;
+      padding: 0px;
+      max-height: 500px;
+
+
+      .m_banner {
+        width: 100%;
+        height: 100%;
+        border: 2px solid black;
+        overflow: hidden;
+        display: flex;
+
+        @each $key,
+        $imge in $banner_imges {
+          &:nth-child(#{$key}) {
+            .banner_img {
+              background-image: url(#{$imge});
+            }
+          }
+        }
+
+        .banner_img {
+          flex: 0 0 50%;
+          background: center/cover no-repeat;
+          transition: transform 500ms ease-in-out;
+          z-index: 50;
+
+
+          &:hover {
+            transform: scale(1.2);
+
+            .link_hover {
+              transform: translateY(0%);
+            }
+          }
+
+          .link_hover {
+            transition: transform 200ms ease-in-out;
+            transform: translateY(-100%);
+            background-color: rgb(235, 112, 12);
+            opacity: 0.6;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .m_banner_info {
+          flex: 0 0 50%;
+          z-index: 55;
+          background-color: yellow;
+          padding: 20px 10px;
+          overflow: hidden;
+          max-height: 100%;
+          p {
+            width: 100%;
+            margin-top: 15px;
+            word-break: keep-all;
+            word-wrap: break-word;
+            overflow: hidden;
+            display: inline-block;
+          }
+        }
+      }
+    }
+
+
+// 섹션 쓰리
+.three{
+  background: url("./images/hong-kong-1990268_640.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  color: white;
+  padding: 80px 40px;
+  .Inquiry{
+    display: flex;
+    flex-direction: column;
+    .Inquiry_info,.Inquiry_text{
+      flex: 0 0 50%;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      justify-content: space-between;
+      opacity: 0.8;
+      padding: 20px;
+      label{
+        border-bottom: 1px solid white;
+        width: 100%;
+        input{
+          width: 75%;
+          color: white;
+          background-color: transparent;
+          outline: none;
+          border: none;
+        }
+      }
+      textarea{
+        resize: none;
+      }
+      }
+
+    }
+    
+}
+
+
+
+
+@include media-breakpoint-up(md) {
+  .first {
+    height: 100%;
+    padding: 40px 20px;
+  }
+
+  .two{
+    height: 500px;
+    margin: 50px auto;
+  }
+
+  .middle_banner {
+    height: 100%;
+    padding: 20px;
+
+    .m_banner {
+      flex-direction: column;
+    }
+
+    .m_banner_info,.banner_img {
+      width: 100%;
+      max-height: 50%;
+
+ 
+    }
+  }
+
+  .three{
+    .Inquiry{
+      flex-direction: row;
+    }
+  }
+}
+  
+@include media-breakpoint-only(xl) {
+
+}
