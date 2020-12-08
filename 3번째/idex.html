@@ -9,45 +9,48 @@
     
 
     <link rel="stylesheet" href="styles.css">
-    <script src="main.js"></script>
+    <script defer src="main.js"></script>
 </head>
 <body>
     
     <nav class="navbar">    
-        <div class="nav_brand"><a href="#">브랜드</a></div>
-        <div class="nav_toogle">eaea
-            <div class="bg_balck"></div>
+        <div class="container">
+            <div class="nav_brand"><a href="#"></a></div>
+            <button class="nav_toogle"><i class="fas fa-align-justify"></i>
+                <div class="bg_balck"></div>
+            </button>
+            <ul class="nav_menu_items">
+                <li class="menu_item"><a href="#">Brand & Products</a></li>
+                <li class="menu_item"><a href="#">Cereal & Nutrition</a></li>
+                <li class="menu_item menu_about "><button>About Kellogg's<span></span></button>
+                    <ul class="about_drop">
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">회사연혁</a></li>
+                        <li><a href="#">켈로그의 가치</a></li>
+                        <li><a href="#">인재 채용</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li class="menu_item"><a href="#">Kellogg's Shop</a></li>
+                <div class="nav_footer">
+                    <ul class="nav_sns" >
+                        <li><a href="#"><i class="fab fa-youtube-square" style="color: red;"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram-square" style="color: blueviolet;"></i></a></li>
+                        <li><a href="#"><i class="fab fa-blogger-b" style="color: green;"></i></a></li>
+                    </ul>
+                    <div class="lang"><select name="lang" placeholder="언어를 선택하세요" >
+                        <option>Languages</option>
+                        <option value="ko">한국어</option>
+                        <option value="am">미국어</option>
+                        <option value="in">인도어</option>
+                        <option value="jp">일본어</option>
+                        <option value="ch">중국어</option>
+                    </select></div>
+                </div>
+                <button class="menu_button"><i class="fas fa-times"></i></button>
+            </ul>
         </div>
-        <ul class="nav_menu_items">
-            <li class="menu_item"><a href="#">Brand & Products</a></li>
-            <li class="menu_item"><a href="#">Cereal & Nutrition</a></li>
-            <li class="menu_item menu_about active"><button >About Kellogg's<span></span></button>
-                <ul class="about_drop">
-                    <li><a href="#">회사소개</a></li>
-                    <li><a href="#">회사연혁</a></li>
-                    <li><a href="#">켈로그의 가치</a></li>
-                    <li><a href="#">인재 채용</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                </ul>
-            </li>
-            <li class="menu_item"><a href="#">Kellogg's Shop</a></li>
-            <div class="nav_footer">
-                <ul class="nav_sns" >
-                    <li><a href="#"><i class="fab fa-youtube-square" style="color: red;"></i></a></li>
-                    <li><a href="#"><i class="fab fa-instagram-square" style="color: blueviolet;"></i></a></li>
-                    <li><a href="#"><i class="fab fa-blogger-b" style="color: green;"></i></a></li>
-                </ul>
-                <div class="lang"><select name="lang" placeholder="언어를 선택하세요" >
-                    <option>Languages</option>
-                    <option value="ko">한국어</option>
-                    <option value="am">미국어</option>
-                    <option value="in">인도어</option>
-                    <option value="jp">일본어</option>
-                    <option value="ch">중국어</option>
-                </select></div>
-            </div>
-            <button class="menu_button"><i class="fas fa-times"></i></button>
-        </ul>
+       
 
         
     </nav>

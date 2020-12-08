@@ -6,9 +6,9 @@ $screen-pc : 1600px;
 
 $max-width : 1200px;
 
-$navbar-mo-height : 50px;
-$navbar-ta-height : 80px;
-$navbar-dt-height : 100px;
+$navbar-mo-height : 70px;
+$navbar-ta-height : 90px;
+$navbar-dt-height : 110px;
 
 
 @mixin mobile {
@@ -74,90 +74,129 @@ a,button{
 .container{
     max-width: $max-width;
     margin: 0 auto;
-    background-color: pink;
+    // background-color: pink;
 }
 // 네비바
 .navbar{
-    // 기본
-    display: flex;
+    // 기본  
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100vw;
+    height: 100px;
     z-index: 1000;
     height: $navbar-mo-height;
-    justify-content: space-between;
-    padding: 10px;
+    background: white;
+    box-shadow: 0px 5px 16px 0px rgba(0,0,0,0.48);
 
-    .nav_menu_items{
-        display: none;
-        &.active{
-            display: flex;
+    .container {
+        max-width: $max-width;
+        height: 100%;
+        display: flex;
+        padding: 0px 10px;
+        justify-content: space-between;
+        .nav_brand{
+            height: 100%;
+            width: 110px;
+            border-radius: 50%;
+            overflow: hidden;
+            a{
+                display: block;
+                background: url("./images/나미.jpg") center/cover no-repeat;
+                height: 100%;
+                width: auto;
+            }
         }
 
-        .menu_item{
-            list-style: none;
-            margin-left: 20px;
-        }
-        .menu_about{
+        .nav_menu_items {
+            display: none;
 
-            .about_drop{
-                display: none;
+            &.active {
+                display: flex;
+            }
+
+            .menu_item {
                 list-style: none;
-                width: 100%;
-                margin-left: -20px;
-                padding-left: 20px;
-                padding-top: 2px;
-                background-color: wheat;
-                
-                li{
-                    margin-top: 5px;
-                    font-size: 16px;
+                margin-left: 20px;
+            }
+
+            .menu_about {
+                .about_drop {
+                    display: none;
+                    list-style: none;
+                    width: 100%;
+                    margin-left: -20px;
+                    margin-top: 20px;
+                    padding-left: 20px;
+                    padding-top: 2px;
+                    background-color: wheat;
+
+                    flex-direction: column;
+                    text-align: left;
+
+                    overflow: hidden;
+
+                    li {
+                        
+                        margin-top: 10px;
+                        font-size: 16px;
+                    }
                 }
             }
-        }
-        .nav_sns{
-            display: none;
-        }
-       
-    }
 
-    .nav_toogle{
-        display: block;
-        &.active {
-            .bg_balck {
-                display: block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                background-color: black;
-                opacity: 0.8;
+            .nav_sns {
+                display: none;
+            }
+
+        }
+
+        .nav_toogle {
+            display: block;
+            margin: 20px;
+
+            &.active {
+                .bg_balck {
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: black;
+                    opacity: 0.8;
+                }
+            }
+            i{
+                font-size: 30px;
             }
         }
-    }
 
-    .nav_footer{
-        display: none;
-    }
-    .menu_button{
-        display: none;
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin: 20px;
-        width: 30px;
-        height: 30px;
-        background-color: transparent;
-        // background-color: violet;
-        font-size: 30px;
-        text-align: center;
-        line-height: 15px;
-    }
+        .nav_footer {
+            display: none;
+        }
 
-  
- 
-    @include desktop_down(){
+        .menu_button {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 20px;
+            width: 30px;
+            height: 30px;
+            background-color: transparent;
+            // background-color: violet;
+            font-size: 30px;
+            text-align: center;
+            line-height: 15px;
+        }
+
+    }
+    
+@include desktop_down() {
+    .container {
+        padding: 5px;
+        .nav_brand{
+            width: 60px;
+        }
         .nav_menu_items {
             // 모바일 설정  
             position: absolute;
@@ -170,28 +209,30 @@ a,button{
             flex-direction: column;
 
             font-size: 20px;
-           
+
             .menu_item {
-                margin-top: 10px;            
+                margin-top: 10px;
             }
-            .menu_about{
-                span{
+
+            .menu_about {
+                span {
                     @include arrow();
                 }
             }
 
-            .nav_footer{
+            .nav_footer {
                 display: block;
                 width: 100%;
                 position: absolute;
                 left: 10px;
                 bottom: 10px;
                 height: 100px;
-                .nav_sns{
+
+                .nav_sns {
                     display: flex;
                     list-style: none;
 
-                    li{
+                    li {
                         width: 40px;
                         height: 40px;
                         margin-left: 10px;
@@ -202,14 +243,16 @@ a,button{
                         background-color: transparent;
                         // border: 1px solid blue;
 
-                        i{
+                        i {
                             transform: translateY(-10px);
                         }
                     }
                 }
-                .lang{
+
+                .lang {
                     width: 100%;
-                    select{
+
+                    select {
                         width: 90%;
                         height: 25px;
                         border: 2px solid black;
@@ -222,80 +265,126 @@ a,button{
             display: block;
         }
     }
+}
 
-    @include mobile(){
-        .nav_menu_items{
+@include mobile() {
+    .container {
+        .nav_menu_items {
             width: 300px;
         }
-        .menu_about{
-            &.active{
+
+        .menu_about {
+            &.active {
                 span {
                     @include arrow();
                     transform: rotate(135deg);
                 }
 
                 .about_drop {
-                    display: block;
+                    display: flex;
                     width: 300px;
+                    animation: ani_mb_menu_drop_open 500ms;
                 }
             }
         }
     }
+}
 
-    @include tablet(){
-        height: $navbar-ta-height;
-        background-color: green;
-        // 네비
-        .nav_menu_items{   
+@include tablet() {
+    height: $navbar-ta-height;
+    // background-color: green;
+
+    // 네비
+    .container {
+        padding: 10px;
+        .nav_brand{
+            width: 70px;
+        }
+
+        .nav_menu_items {
             width: 400px;
             font-size: 24px;
         }
-        .menu_about{
-            &.active{
+
+        .menu_about {
+            &.active {
                 span {
                     @include arrow();
                     transform: rotate(135deg);
                 }
 
                 .about_drop {
-                    display: block;
+                    display: flex;
                     width: 400px;
+                    animation: ani_mb_menu_drop_open 500ms;
                 }
-            }          
+            }
         }
     }
-   
+}
 
-    @include desktop(){
-        .nav_menu_items{
-            display: flex;
-        }
-        height: $navbar-dt-height;
-        background-color: gold;
 
-        .nav_toogle{
+@include desktop() {
+    height: $navbar-dt-height;
+    // background-color: gold;
+    .container {
+        .nav_toogle {
             display: none;
         }
-        .nav_menu_items{
-            position: relative;
+
+        .nav_menu_items {
+            display: flex;
             height: 100%;
+            align-items: stretch;
+            // justify-items: center;
+            position: relative;            
+            // height: 100%;
             font-size: 18px;
-
-            .menu_item{
-                
-                .about_drop{
-                    margin: 0;
-                    padding-left: 5px;
-                }
-                
-            }
-
-            .menu_about:hover .about_drop{
+            .menu_item {
                 display: block;
-            }
+                margin-left: 60px;
+                padding: 40px 0px;
+                // height: 100%;
+                
+                // height: 100%;
+                &.menu_about{
+            
+
+                    span{
+                        @include arrow();
+                    }
+                    &.over  {
+
+                        .about_drop{
+                        display: flex;
+                        flex-direction: column;
+                        text-align: left;
+                        position: absolute;
+                        top: 100px;
+                        margin-top: 10px;
+                        width: 200px;
+                        height: 200px;
+                        overflow: hidden;
+                        animation: ani_dt_menu_drop 500ms;                    
+                        background-color: white;
+                        opacity: 0.9;
+                        }
+                        span{
+                            transform: rotate(135deg);
+                        }
+                    }
+                    
+                    
+                }
+
+  
+
+            }        
         }
     }
-    
+
+}
+       
 }
 
 
@@ -303,7 +392,7 @@ a,button{
 
 .box{
     margin-top: $navbar-mo-height;
-    width: 500px;
+    width: 100%;
     height: 500px;
     background-color: yellow;
 
@@ -314,4 +403,25 @@ a,button{
     @include desktop(){
         margin-top: $navbar-dt-height;
         }
+}
+
+
+// 애니메이션
+
+@keyframes ani_dt_menu_drop{
+    0%{
+        height: 0px;
+    }
+    100%{
+        height: 200px;
+    }
+}
+
+@keyframes ani_mb_menu_drop_open{
+    0%{
+        height: 0px;
+    }
+    100%{
+        height: 180px;
+    }
 }
