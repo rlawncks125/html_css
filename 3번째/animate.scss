@@ -1,0 +1,45 @@
+@mixin ani_hover_inc ( $hegiht , $dur) {
+    
+    $text : unquote("box_hover_#{$hegiht}");
+    $px : unquote("#{$hegiht}px");
+    // $text : "box_dis_"+#{$hegiht};
+    
+    @keyframes #{$text} {
+        0%{
+            height: 0px;
+        }
+        100%{
+            height: #{$px};
+        }
+    }
+    animation: #{$text} #{$dur};
+    height: #{$px};
+
+    @content;
+}
+
+@mixin ani_out_inc ( $hegiht , $dur) {
+    
+    $text : unquote("box_dis_#{$hegiht}");
+    $px : unquote("#{$hegiht}px");
+    // $text : "box_dis_"+#{$hegiht};
+    
+    @keyframes #{$text} {
+        0%{
+            height:#{$px};
+        }
+        100%{
+            height: 0px;
+        }
+    //     0%{
+    //         height: 100px;
+    //     }
+    //     100%{
+    //         height: 0px;
+    //     }
+    }
+    animation: #{$text} #{$dur};
+    height: 0px;
+
+    @content;
+}

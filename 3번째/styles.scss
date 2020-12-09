@@ -1,3 +1,4 @@
+@import "./animate.scss";
 
 
 $screen-mobile : 760px;
@@ -112,6 +113,7 @@ a,button{
 
             &.active {
                 display: flex;
+                animation: ani_items_active 400ms;
             }
 
             .menu_item {
@@ -124,6 +126,7 @@ a,button{
                     display: none;
                     list-style: none;
                     width: 100%;
+                    height: 200px;
                     margin-left: -20px;
                     margin-top: 20px;
                     padding-left: 20px;
@@ -163,6 +166,7 @@ a,button{
                     height: 100vh;
                     background-color: black;
                     opacity: 0.8;
+                    cursor: auto;
                 }
             }
             i{
@@ -215,8 +219,29 @@ a,button{
             }
 
             .menu_about {
+                .about_drop{
+                    display: flex;
+                    height: 0px;
+                    padding-top: 0;
+                }
                 span {
                     @include arrow();
+                }
+
+                &[data-mb_ani='active'] {
+                    span {
+                        @include arrow();
+                        transform: rotate(135deg);
+                    }
+
+                    .about_drop {
+                        @include ani_hover_inc(180, 500ms);
+                    }
+                }
+                &[data-mb_ani='close']{
+                    .about_drop {
+                        @include ani_out_inc(180, 500ms);
+                    }
                 }
             }
 
@@ -274,18 +299,10 @@ a,button{
         }
 
         .menu_about {
-            &.active {
-                span {
-                    @include arrow();
-                    transform: rotate(135deg);
-                }
-
-                .about_drop {
-                    display: flex;
-                    width: 300px;
-                    animation: ani_mb_menu_drop_open 500ms;
-                }
+            .about_drop{
+                width: 300px;
             }
+            
         }
     }
 }
@@ -307,18 +324,10 @@ a,button{
         }
 
         .menu_about {
-            &.active {
-                span {
-                    @include arrow();
-                    transform: rotate(135deg);
-                }
-
-                .about_drop {
-                    display: flex;
-                    width: 400px;
-                    animation: ani_mb_menu_drop_open 500ms;
-                }
+            .about_drop{
+                width: 400px;
             }
+            
         }
     }
 }
@@ -342,20 +351,13 @@ a,button{
             font-size: 18px;
             .menu_item {
                 display: block;
-                margin-left: 60px;
+                margin: 0px 30px;
                 padding: 40px 0px;
                 // height: 100%;
                 
                 // height: 100%;
                 &.menu_about{
-            
-
-                    span{
-                        @include arrow();
-                    }
-                    &.over  {
-
-                        .about_drop{
+                    .about_drop{
                         display: flex;
                         flex-direction: column;
                         text-align: left;
@@ -363,16 +365,37 @@ a,button{
                         top: 100px;
                         margin-top: 10px;
                         width: 200px;
-                        height: 200px;
+                        height: 0px;
+                        padding-top: 0;
                         overflow: hidden;
-                        animation: ani_dt_menu_drop 500ms;                    
+                        // padding: 0px;
                         background-color: white;
                         opacity: 0.9;
+
+                      
+                    }
+                    span{
+                        @include arrow();
+                    }
+
+                    &[data-dt_ani='over']  {
+                        .about_drop{                       
+                        // animation: ani_dt_menu_drop 500ms;                    
+                        @include ani_hover_inc(200,500ms);
+                        
                         }
                         span{
                             transform: rotate(135deg);
                         }
                     }
+                    &[data-dt_ani="out"]{           
+                        .about_drop{       
+                        @include ani_out_inc(200,500ms);
+                        }
+                    }
+
+                    
+
                     
                     
                 }
@@ -383,10 +406,12 @@ a,button{
         }
     }
 
-}
-       
+} 
+
 }
 
+
+// 
 
 
 
@@ -422,6 +447,15 @@ a,button{
         height: 0px;
     }
     100%{
-        height: 180px;
+        height: 200px;
+    }
+}
+
+@keyframes ani_items_active{
+    0%{
+        transform:  translateX(500px);
+    }
+    100%{
+        transform: translateX(0px);
     }
 }
