@@ -112,6 +112,18 @@ nav {
   background-color: white;
   -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+  display: block;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+}
+
+main {
+  margin-top: 3rem;
+  background-color: violet;
+  height: 200px;
+  width: 100vw;
 }
 
 .nav_cotnet {
@@ -136,7 +148,7 @@ nav {
 }
 
 .nav_cotnet .menu_teb {
-  width: 12rem;
+  width: 14rem;
   height: 100vh;
   position: absolute;
   top: 0;
@@ -154,6 +166,10 @@ nav {
 .nav_cotnet .menu_teb .links li {
   padding: 0.3rem;
   padding-left: 0.8rem;
+}
+
+.nav_cotnet .menu_teb .links .menu_about {
+  cursor: pointer;
 }
 
 .nav_cotnet .menu_teb .links .menu_about span {
@@ -240,12 +256,6 @@ nav {
   }
 }
 
-.nav_cotnet .menu_teb .menu_teb_footer {
-  height: 30%;
-  max-height: 30%;
-  overflow: hidden;
-}
-
 .nav_cotnet .menu_teb .close_btn {
   position: absolute;
   right: 1.2rem;
@@ -253,6 +263,16 @@ nav {
   font-size: 1rem;
   background-color: transparent;
   outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav_cotnet .menu_tog {
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem;
+  font-size: 1.5rem;
+  background-color: transparent;
   border: none;
   cursor: pointer;
 }
@@ -279,9 +299,36 @@ nav {
             animation: menu_teb_active 500ms;
   }
   .nav_cotnet .menu_teb .links {
-    height: 70%;
-    max-height: 70%;
+    height: calc(100vh - 8rem);
+    max-height: calc(100vh - 8rem);
     overflow: scroll;
+  }
+  .nav_cotnet .menu_teb_footer {
+    height: 5rem;
+    max-height: 5rem;
+    overflow: hidden;
+    padding: 0.5rem;
+    position: relative;
+    left: 0px;
+    bottom: 0px;
+  }
+  .nav_cotnet .menu_teb_footer .sns_link a {
+    width: 3rem;
+    height: 3rem;
+    margin-left: 0.5rem;
+  }
+  .nav_cotnet .menu_teb_footer .sns_link a:nth-child(1) {
+    color: red;
+  }
+  .nav_cotnet .menu_teb_footer .sns_link a:nth-child(2) {
+    color: paleturquoise;
+  }
+  .nav_cotnet .menu_teb_footer .sns_link a:nth-child(3) {
+    color: green;
+  }
+  .nav_cotnet .menu_teb_footer .lang {
+    width: 80%;
+    margin-top: 1rem;
   }
 }
 
