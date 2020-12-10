@@ -1,0 +1,316 @@
+@import "./animate.scss";
+
+
+// 컬러
+$color-font-black : black;
+
+//  사이즈
+
+
+// 마진
+
+
+//  패딩
+
+
+// 미디어
+//모바일
+@mixin mobile {
+    @media ( min-width:0px) and ( max-width:600px){    
+    // @media screen and ( min-width:0px){    
+        @content;
+    }
+}
+
+
+// 타블렛PC
+@mixin tablet {
+    @media ( min-width:601px) and ( max-width:1180px){  /* 타블렛PC */
+    // @media screen and ( min-width:601px) {  /* 타블렛PC */
+        @content;
+    }
+}
+
+@mixin mobile_table {
+    @media (min-width:0px) and (max-width : 1180px){
+        @content;
+    }
+}
+
+// // 노트북
+// @mixin notebook {
+//     @media (min-width:701px) and (max-width:900px) {
+//         @content;
+//     }
+// }
+
+// 데스크탑
+@mixin desktop {
+    @media (min-width:1180px){
+        @content;
+    }
+}
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    // font-size: 28px;
+
+    @include mobile(){
+        font-size: 20px;
+    }
+    @include tablet(){
+        font-size: 24px;
+    }
+    @include desktop(){
+        font-size: 28px;
+    }
+}
+body{
+    position: relative;
+
+    font-family: 'Pathway Gothic One', sans-serif;
+}
+a, ul{
+    padding: 0;
+    text-decoration: none;
+    color: $color-font-black;
+}
+
+.container{
+    max-width: 1200px;
+    margin : 0 auto;
+}
+
+nav{
+// position: relative;
+background-color: white;
+box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.10);
+}
+
+.nav_cotnet{
+    height: 3rem;
+    display: flex;
+    justify-content: space-between;
+    
+    .brand{
+        width: 4rem;
+        height: 2.5rem;
+        img{
+            width: 100%;
+            height: 100%;
+            padding: 5px;
+        }
+    }
+
+    .menu_teb{
+        width: 12rem;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: pink;
+        // padding: 3rem 0;
+        padding-top: 3rem;
+        z-index: 999;
+        .links{
+            font-size: 1rem;
+            list-style: none;
+ 
+            // padding-left: 0.8rem;
+
+            li{
+                padding: 0.3rem;
+                padding-left: 0.8rem;
+            }
+
+            .menu_about{
+                span{
+                    //  화살표 표시
+                    @include arrow(45deg);
+                    // @include arrow(-135deg);
+                }
+
+                .about_links {
+                    height: 0px;
+                    background-color: palegoldenrod;
+                    list-style: none;
+                    margin-top: 0.5rem;
+                    margin-left: -0.8rem;
+                    overflow: hidden;
+
+                    // line-height: 2rem;
+                    li {
+                        font-size: 0.8rem;
+                        padding: 8px;
+                    }
+                }
+
+
+                &[data-ani_click="on"]{
+                    // height: 10rem;
+                    .about_links {
+                        @include ani_dropdown_open(10rem, 500ms);
+                    }
+                    span{
+                    @include arrow(-135deg);
+                    }
+                }
+                &[data-ani_click="off"]{
+                    // height: 0rem;
+                    .about_links {
+                        @include ani_dropdown_close(10rem, 500ms);
+                    }
+                //    
+                }
+            }
+        }
+        .menu_teb_footer{
+            height: 30%;
+            max-height: 30%;
+            overflow: hidden;
+        }
+        .close_btn{
+            position: absolute;
+            right: 1.2rem;
+            top: 1.2rem;
+            font-size: 1rem;
+            background-color: transparent;
+            outline: none;
+            border: none;
+            cursor: pointer;
+        } 
+    }
+    .menu_tog{
+        &.active {
+            &::after {
+                display: block;
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: black;
+                opacity: 0.8;
+            }
+        }
+    }
+ 
+
+    @include mobile_table() {
+        .menu_teb {
+            display: none;
+
+            &.active{
+                display: block;
+                animation: menu_teb_active 500ms;
+            }
+
+            .links{
+                height: 70%;
+                max-height: 70%;
+                overflow: scroll;
+            }       
+        }
+
+    }
+    @include desktop(){
+        justify-content: center;
+        background-color: white;
+        .menu_teb{
+            background-color: transparent;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            .links{
+                height: 100%;
+                max-height: none;
+                display: flex;
+                flex-direction: row;
+                float: right;
+                padding: 0 10px;
+                // align-items: center;
+
+                li{
+                    padding: 1rem 0;
+                    margin-left: 1.8rem;
+                    font-size: 0.9rem;
+                }
+
+                .menu_about {
+                    
+                    &[data-ani_hover="over"] {
+                        .about_links {
+                            @include ani_dropdown_open(7rem,500ms);
+                        }
+                        span{
+                            @include arrow(-135deg);
+                        }
+                    }
+
+                    &[data-ani_hover="out"] {
+                        .about_links {
+                            @include ani_dropdown_close(7rem,500ms);
+                        }
+                    }
+
+                    .about_links{
+                        height: 0;
+                        background-color: white;
+                        opacity: .8;
+                        padding-top: 10px;
+                        li{
+                            font-size: 0.6rem;
+                            margin-left: 0;
+                        }
+                    }                
+                }
+                .shop{
+                    width: 4rem;
+                    text-align: center;
+                    padding: 0;
+                    margin-top: 0.8rem;
+                    margin-bottom: 0.8rem;
+                    border: 1px solid red;
+                    span{
+                        display: none;
+                    }
+                    a::after{
+                        animation: ani_shop 2000ms steps(1,end) infinite;
+                        content: "adad";
+                        display: block;
+                        width: 100%;
+                        height: 1.72222em;
+                        font-size: 0.6rem;
+                        // background-color: yellow;
+                        padding-top: 0.5em;
+                    }
+                    
+                }
+                
+            }
+            .menu_teb_footer{
+                display: none;
+            }
+            .close_btn{
+                display: none;
+            }
+        }
+        .menu_tog{
+            display: none;
+        }
+    }
+
+}
+
+
+
+

@@ -1,7 +1,7 @@
-@mixin ani_hover_inc ( $hegiht , $dur) {
+@mixin ani_dropdown_open ( $hegiht , $dur) {
     
     $text : unquote("box_hover_#{$hegiht}");
-    $px : unquote("#{$hegiht}px");
+    // $px : unquote("#{$hegiht}px");
     // $text : "box_dis_"+#{$hegiht};
     
     @keyframes #{$text} {
@@ -9,24 +9,24 @@
             height: 0px;
         }
         100%{
-            height: #{$px};
+            height: #{$hegiht};
         }
     }
     animation: #{$text} #{$dur};
-    height: #{$px};
+    height: #{$hegiht};
 
     @content;
 }
 
-@mixin ani_out_inc ( $hegiht , $dur) {
+@mixin ani_dropdown_close ( $hegiht , $dur) {
     
     $text : unquote("box_dis_#{$hegiht}");
-    $px : unquote("#{$hegiht}px");
+    // $px : unquote("#{$hegiht}px");
     // $text : "box_dis_"+#{$hegiht};
     
     @keyframes #{$text} {
         0%{
-            height:#{$px};
+            height:#{$hegiht};
         }
         100%{
             height: 0px;
@@ -42,4 +42,58 @@
     height: 0px;
 
     @content;
+}
+
+
+// 메뉴 about 화살표 표시
+@mixin arrow($deg) {
+    
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-left: 3px;
+    border: 1px solid red;
+    border-width: 1px 0 0 1px;
+    transform: rotate(#{$deg});
+
+    // 반전
+    // transform: rotate(-135deg);
+
+    
+
+
+    @content;
+}
+
+@keyframes menu_teb_active{
+    0%{
+        transform: translateX(12rem);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+@keyframes ani_shop{
+    0%{
+     color: white;
+     background-color: red;
+     content: "Kellogg`s Shop";
+    }
+    50%{
+        color: white;
+        background-color: red;
+        content: "Kellogg`s Shop";
+    }
+    51%{
+    color: red;
+    background-color: white;
+    content: "켈로그 샵";
+    }
+
+    100%{
+    color: red;
+    background-color: white;
+    content: "켈로그 샵";
+    }
 }

@@ -1,1 +1,67 @@
-/* No CSS */
+@charset "UTF-8";
+@-webkit-keyframes menu_teb_active {
+  0% {
+    -webkit-transform: translateX(12rem);
+            transform: translateX(12rem);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes menu_teb_active {
+  0% {
+    -webkit-transform: translateX(12rem);
+            transform: translateX(12rem);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes ani_shop {
+  0% {
+    color: white;
+    background-color: red;
+    content: "Kellogg`s Shop";
+  }
+  50% {
+    color: white;
+    background-color: red;
+    content: "Kellogg`s Shop";
+  }
+  51% {
+    color: red;
+    background-color: white;
+    content: "켈로그 샵";
+  }
+  100% {
+    color: red;
+    background-color: white;
+    content: "켈로그 샵";
+  }
+}
+
+@keyframes ani_shop {
+  0% {
+    color: white;
+    background-color: red;
+    content: "Kellogg`s Shop";
+  }
+  50% {
+    color: white;
+    background-color: red;
+    content: "Kellogg`s Shop";
+  }
+  51% {
+    color: red;
+    background-color: white;
+    content: "켈로그 샵";
+  }
+  100% {
+    color: red;
+    background-color: white;
+    content: "켈로그 샵";
+  }
+}

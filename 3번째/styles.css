@@ -1,1 +1,412 @@
-/* No CSS */
+@charset "UTF-8";
+@-webkit-keyframes menu_teb_active {
+  0% {
+    -webkit-transform: translateX(12rem);
+            transform: translateX(12rem);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes menu_teb_active {
+  0% {
+    -webkit-transform: translateX(12rem);
+            transform: translateX(12rem);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes ani_shop {
+  0% {
+    color: white;
+    background-color: red;
+    content: "Kellogg`s Shop";
+  }
+  50% {
+    color: white;
+    background-color: red;
+    content: "Kellogg`s Shop";
+  }
+  51% {
+    color: red;
+    background-color: white;
+    content: "켈로그 샵";
+  }
+  100% {
+    color: red;
+    background-color: white;
+    content: "켈로그 샵";
+  }
+}
+
+@keyframes ani_shop {
+  0% {
+    color: white;
+    background-color: red;
+    content: "Kellogg`s Shop";
+  }
+  50% {
+    color: white;
+    background-color: red;
+    content: "Kellogg`s Shop";
+  }
+  51% {
+    color: red;
+    background-color: white;
+    content: "켈로그 샵";
+  }
+  100% {
+    color: red;
+    background-color: white;
+    content: "켈로그 샵";
+  }
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1180px) {
+  html {
+    /* 타블렛PC */
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 1180px) {
+  html {
+    font-size: 28px;
+  }
+}
+
+body {
+  position: relative;
+  font-family: 'Pathway Gothic One', sans-serif;
+}
+
+a, ul {
+  padding: 0;
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav {
+  background-color: white;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.nav_cotnet {
+  height: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.nav_cotnet .brand {
+  width: 4rem;
+  height: 2.5rem;
+}
+
+.nav_cotnet .brand img {
+  width: 100%;
+  height: 100%;
+  padding: 5px;
+}
+
+.nav_cotnet .menu_teb {
+  width: 12rem;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: pink;
+  padding-top: 3rem;
+  z-index: 999;
+}
+
+.nav_cotnet .menu_teb .links {
+  font-size: 1rem;
+  list-style: none;
+}
+
+.nav_cotnet .menu_teb .links li {
+  padding: 0.3rem;
+  padding-left: 0.8rem;
+}
+
+.nav_cotnet .menu_teb .links .menu_about span {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 3px;
+  border: 1px solid red;
+  border-width: 1px 0 0 1px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.nav_cotnet .menu_teb .links .menu_about .about_links {
+  height: 0px;
+  background-color: palegoldenrod;
+  list-style: none;
+  margin-top: 0.5rem;
+  margin-left: -0.8rem;
+  overflow: hidden;
+}
+
+.nav_cotnet .menu_teb .links .menu_about .about_links li {
+  font-size: 0.8rem;
+  padding: 8px;
+}
+
+.nav_cotnet .menu_teb .links .menu_about[data-ani_click="on"] .about_links {
+  -webkit-animation: box_hover_10rem 500ms;
+          animation: box_hover_10rem 500ms;
+  height: 10rem;
+}
+
+@-webkit-keyframes box_hover_10rem {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 10rem;
+  }
+}
+
+@keyframes box_hover_10rem {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 10rem;
+  }
+}
+
+.nav_cotnet .menu_teb .links .menu_about[data-ani_click="on"] span {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 3px;
+  border: 1px solid red;
+  border-width: 1px 0 0 1px;
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+.nav_cotnet .menu_teb .links .menu_about[data-ani_click="off"] .about_links {
+  -webkit-animation: box_dis_10rem 500ms;
+          animation: box_dis_10rem 500ms;
+  height: 0px;
+}
+
+@-webkit-keyframes box_dis_10rem {
+  0% {
+    height: 10rem;
+  }
+  100% {
+    height: 0px;
+  }
+}
+
+@keyframes box_dis_10rem {
+  0% {
+    height: 10rem;
+  }
+  100% {
+    height: 0px;
+  }
+}
+
+.nav_cotnet .menu_teb .menu_teb_footer {
+  height: 30%;
+  max-height: 30%;
+  overflow: hidden;
+}
+
+.nav_cotnet .menu_teb .close_btn {
+  position: absolute;
+  right: 1.2rem;
+  top: 1.2rem;
+  font-size: 1rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav_cotnet .menu_tog.active::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.8;
+}
+
+@media (min-width: 0px) and (max-width: 1180px) {
+  .nav_cotnet .menu_teb {
+    display: none;
+  }
+  .nav_cotnet .menu_teb.active {
+    display: block;
+    -webkit-animation: menu_teb_active 500ms;
+            animation: menu_teb_active 500ms;
+  }
+  .nav_cotnet .menu_teb .links {
+    height: 70%;
+    max-height: 70%;
+    overflow: scroll;
+  }
+}
+
+@media (min-width: 1180px) {
+  .nav_cotnet {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: white;
+  }
+  .nav_cotnet .menu_teb {
+    background-color: transparent;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+  .nav_cotnet .menu_teb .links {
+    height: 100%;
+    max-height: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    float: right;
+    padding: 0 10px;
+  }
+  .nav_cotnet .menu_teb .links li {
+    padding: 1rem 0;
+    margin-left: 1.8rem;
+    font-size: 0.9rem;
+  }
+  .nav_cotnet .menu_teb .links .menu_about[data-ani_hover="over"] .about_links {
+    -webkit-animation: box_hover_7rem 500ms;
+            animation: box_hover_7rem 500ms;
+    height: 7rem;
+  }
+  @-webkit-keyframes box_hover_7rem {
+    0% {
+      height: 0px;
+    }
+    100% {
+      height: 7rem;
+    }
+  }
+  @keyframes box_hover_7rem {
+    0% {
+      height: 0px;
+    }
+    100% {
+      height: 7rem;
+    }
+  }
+  .nav_cotnet .menu_teb .links .menu_about[data-ani_hover="over"] span {
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-left: 3px;
+    border: 1px solid red;
+    border-width: 1px 0 0 1px;
+    -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+  }
+  .nav_cotnet .menu_teb .links .menu_about[data-ani_hover="out"] .about_links {
+    -webkit-animation: box_dis_7rem 500ms;
+            animation: box_dis_7rem 500ms;
+    height: 0px;
+  }
+  @-webkit-keyframes box_dis_7rem {
+    0% {
+      height: 7rem;
+    }
+    100% {
+      height: 0px;
+    }
+  }
+  @keyframes box_dis_7rem {
+    0% {
+      height: 7rem;
+    }
+    100% {
+      height: 0px;
+    }
+  }
+  .nav_cotnet .menu_teb .links .menu_about .about_links {
+    height: 0;
+    background-color: white;
+    opacity: .8;
+    padding-top: 10px;
+  }
+  .nav_cotnet .menu_teb .links .menu_about .about_links li {
+    font-size: 0.6rem;
+    margin-left: 0;
+  }
+  .nav_cotnet .menu_teb .links .shop {
+    width: 4rem;
+    text-align: center;
+    padding: 0;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid red;
+  }
+  .nav_cotnet .menu_teb .links .shop span {
+    display: none;
+  }
+  .nav_cotnet .menu_teb .links .shop a::after {
+    -webkit-animation: ani_shop 2000ms steps(1, end) infinite;
+            animation: ani_shop 2000ms steps(1, end) infinite;
+    content: "adad";
+    display: block;
+    width: 100%;
+    height: 1.72222em;
+    font-size: 0.6rem;
+    padding-top: 0.5em;
+  }
+  .nav_cotnet .menu_teb .menu_teb_footer {
+    display: none;
+  }
+  .nav_cotnet .menu_teb .close_btn {
+    display: none;
+  }
+  .nav_cotnet .menu_tog {
+    display: none;
+  }
+}
