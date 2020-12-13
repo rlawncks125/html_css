@@ -29,4 +29,28 @@ function tabletAniRest(){
 }
 
 
+const swiper = new Swiper('.top_slide', {
+    slidesPerView: 1,
+    speed : 500,
+    loop: true,
+    // simulateTouch : false,
+    autoplay: {
+        delay: 1000,
+        disableOnInteraction: false,
+      },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
 
+  const swiper_product = new Swiper('.swiper_product', {
+    slidesPerView: 1,
+    speed : 500,
+    loop: true,
+    // simulateTouch : false,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });

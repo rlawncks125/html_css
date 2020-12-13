@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
    <link href="https://fonts.googleapis.com/css2?family=Pathway+Gothic+One&display=swap" rel="stylesheet">
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-
+   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   
     <link rel="stylesheet" href="./styles.css">
 
@@ -18,7 +18,8 @@
 </head>
 <body>
 
-<nav>
+    <!-- 헤더 -->
+<header>
     <div class=" container">
         <div class="nav_cotnet">
             <a class="brand" href="#"><img src="./images/상디.jpg" alt="로고"></a>
@@ -63,14 +64,153 @@
             <button class="menu_tog"><i class="fas fa-align-justify"></i></button>
         </div>
     </div>
-</nav>
+</header>
 
 <main style="height: 3000px;">
-    <section id="슬라이더">
-        <div>asdasdaㅁㅁd</div>
+
+    <!-- 슬라이더 -->
+    <section id="top">
+    <!-- 메인 배너 -->
+        <div class="main_benner">
+            <!-- Swiper -->
+            <div class="swiper-container top_slide">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><a href="#"><img src="./images/배경1.jpg" alt=""></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="./images/배경2.jpg" alt=""></a></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="./images/배경3.jpg" alt=""></a></a></div>
+                    <div class="swiper-slide"><a href="#"><img src="./images/배경4.jpg" alt=""></a></a></div>
+                </div>
+                <!-- Add Pagination -->
+                <!-- Add Arrows -->
+                <div class="swiper-button-next">
+                    
+                </div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    <!-- 서브 배너 -->
+        <div class="sub_banner container">
+            <div class="sub_banner_top">
+                <span>캘로그 제품</span>
+                <button>더보기</button>
+            </div>
+            <div class="sub_banner_content">
+                <a href="#" alt="1"></a>
+                <a href="#" alt="2"></a>
+                <a href="#" alt="3"></a>
+                <a href="#" alt="4"></a>
+            </div>
+        </div> 
     </section>
+
+
+    <!-- 제품 소개 -->
+    <section id="제품소개" class="product_desc container">
+        <div class="swiper-container swiper_product">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./images/초코이미지1.jpg" alt="" class="product_img">
+                    <div class="product_info">
+                        <img src="./images/초고시리얼_top.jpg" class="info_dsc_img" alt="">
+                        <p>오곡으로 맛있게 채운 한끼. <br />진한 초콜릿 맛 첵스초코!</p>
+                        <button class="product_more"></button>
+                        <div class="info_dec">
+                            <div class="dec_weight">
+                                <img src="./images/중량.jpg" alt="">중량
+                                <p>340g<br />570g</p>
+                            </div>
+                            <div class="dec_end_date">
+                                <img src="./images/유통기한.jpg" alt="">유통기한
+                                <p>12개월</p>
+                            </div>
+                            <div class="dec_kacl">
+                                <img src="./images/열량.jpg" alt="">열량
+                                <p>118kcal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/그래놀라1.jpg" alt="" class="product_img">
+                    <div class="product_info">
+                        <img src="./images/켈로그바_top.jpg" class="info_dsc_img" alt="">
+                        <p>바삭하게 구운 곡물을 색다르게, <br />스낵으로 즐길수 있는 한입 그래놀라 체다치즈맛!</p>
+                        <button class="product_more"></button>
+                        <div class="info_dec">
+                            <div class="dec_weight">
+                                <img src="./images/중량.jpg" alt="">중량
+                                <p>50g</p>
+                            </div>
+                            <div class="dec_end_date">
+                                <img src="./images/유통기한.jpg" alt="">유통기한
+                                <p>12개월</p>
+                            </div>
+                            <div class="dec_kacl">
+                                <img src="./images/열량.jpg" alt="">열량
+                                <p>232kcal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/그래놀라2.jpg" alt="" class="product_img">
+                    <div class="product_info">
+                        <img src="./images/그래놀라_top.jpg" class="info_dsc_img" alt="">
+                        <p>리얼블루베리에 통아몬드슬라이드가 <br />더해진 맛과 영양 가득한 그래놀라</p>
+                        <button class="product_more"></button>
+                        <div class="info_dec">
+                            <div class="dec_weight">
+                                <img src="./images/중량.jpg" alt="">중량
+                                <p>450g</p>
+                            </div>
+                            <div class="dec_end_date">
+                                <img src="./images/유통기한.jpg" alt="">유통기한
+                                <p>12개월</p>
+                            </div>
+                            <div class="dec_kacl">
+                                <img src="./images/열량.jpg" alt="">열량
+                                <p>439kcal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/켈로그바2.jpg" alt="" class="product_img">
+                    <div class="product_info">
+                        <img src="./images/켈로그바_top.jpg" class="info_dsc_img" alt="">
+                        <p>영양 가득 그래놀라와 식이섬유 그리고 단백질6g을 담은 켈로그 프로틴 그래놀라바 상큼한 사과맛</p>
+                        <button class="product_more"></button>
+                        <div class="info_dec">
+                            <div class="dec_weight">
+                                <img src="./images/중량.jpg" alt="">중량
+                                <p>30g</p>
+                            </div>
+                            <div class="dec_end_date">
+                                <img src="./images/유통기한.jpg" alt="">유통기한
+                                <p>12개월</p>
+                            </div>
+                            <div class="dec_kacl">
+                                <img src="./images/열량.jpg" alt="">열량
+                                <p>121kcal</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+          </div>
+    </section>
+
 </main>
     
 
+
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </body>
 </html>
