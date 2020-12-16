@@ -3,7 +3,7 @@
 
 // 컬러
 $color-font-black : black;
-
+$footer-color : #d20b2f;
 //  사이즈
 
 
@@ -78,7 +78,6 @@ html {
 
 body {
     position: relative;
-
     font-family: 'Pathway Gothic One', sans-serif;
 }
 
@@ -88,12 +87,12 @@ ul {
     text-decoration: none;
     color: $color-font-black;
 }
-
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+button{
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
+
 
 header {
     // position: relative;
@@ -108,11 +107,16 @@ header {
 
 main {
     margin-top: 3rem;
-    background-color: violet;
-    height: 200px;
-    width: 100vw;
+    height: 100%;
+}
+footer{
+    background-color: $footer-color;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
 //헤더 네비바
 
 .nav_cotnet {
@@ -796,9 +800,6 @@ main {
                         }
                 }
             }          
-
-          
-
             a {
                 display: block;
                 position: relative;
@@ -937,3 +938,231 @@ main {
         }
     }
 }
+
+
+// 홍보
+.promotion {
+    margin-top: 0.5rem;
+    padding: 1rem;
+    .pm_banner {
+        width: 100%;
+        height: 4.2rem;
+       
+        background-color: $footer-color;
+        border-radius: 10px;
+        text-align: center;
+        position: relative;
+        .banner_line{    
+            .banner_logo {
+                width: 100px;
+                height: 50px;
+                background: url("./images/banner_logo.jpg") no-repeat center;
+                position: absolute;
+                top: -5px;
+                left: calc( 50% - 50px);
+                z-index: 1;
+            }
+            &::before{
+                content: "";
+                display: block;
+                border-top: 1px solid white;                
+                width: 90%;
+                position: relative;
+                top: 15px;
+                margin: 0 auto;
+            }
+            &::after{
+                content: "";
+                display: block;
+                border-top: 1px solid white;
+                width: 90%;
+                position: relative;
+                top: -68px;
+                margin: 0 auto;
+            }
+            em{
+                display: block;
+                font-size: 40px;
+                margin-top: 40px;
+                color: white;
+            }
+
+            @include mobile(){
+                &::before{
+       
+                }
+                &::after{
+                    top: -58px;
+                }
+                em{
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+
+    .pm {
+        width: 100%;
+        height: 80vw;
+
+        .pm_video {
+            width: 100%;
+            height: 50vw;
+            background-color: yellow;
+            margin-top: 0.5rem;
+        }
+
+        .pm_banners {
+            height: 30vw;
+            display: flex;
+            justify-content: space-between;
+
+            .banner {
+                width: 33.3333%;
+                max-width: 33.33%;
+                margin: 0.4rem 0.2rem;
+                
+                background-color: paleturquoise;
+                
+                @for $var from 1 to 5 {
+                    &:nth-child(#{$var}) {
+                        background: url("./images/배너#{$var}.jpg") top/cover no-repeat;
+                    }
+                }
+
+                &:nth-last-child(1) {
+                    display: none;
+                }               
+
+            }
+        }
+
+        @include desktop(){
+            display: flex;
+            height: 460px;
+            .pm_video{
+                flex: 0 0 60%;
+                height: 100%;
+                display: inline-block;
+                margin: 0.4rem 0.2rem;
+            }
+            .pm_banners{
+                flex:  0 0 40%;
+                height: 100%;
+                margin-top: 0;
+                display: inline-flex;
+                flex-flow: wrap;
+                justify-content: flex-start;
+                
+                .banner{          
+                    
+                    flex: 0 0 50%;    
+                    
+                    max-width: 210px;
+                    height: 220px;
+                    &:nth-last-child(1) {
+                        display: block;
+                    }    
+                }
+            }
+            
+        }
+
+    }
+
+
+}
+
+
+// 맨위 버튼
+.up_arrow{
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: fixed;
+    right: 20px;
+    bottom: 80px;
+    z-index: 80;
+    border-radius: 50%;
+    box-shadow: 0 15px 20px 0 rgba(113, 94, 97, 0.15);
+}
+
+.footer_content{
+    color: white;
+    .footer_hide_content{
+        width: 100%;
+        height: 80px;
+        background-color: $footer-color;
+        padding: 4px 15px;
+        font-size: 16px;
+        display: none;
+
+        p{
+            a{
+                color: white;
+                cursor: pointer;
+            }
+            span{
+                margin-left: 8px;
+                margin-right: 8px;
+            }
+        }
+
+        &.active{
+            display: block;
+        }
+        &::after{
+            content: "";
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+            height: 1px;
+            background-color: white;
+        }
+    }
+
+    .footer_show_content {
+        width: 100%;
+        height: 60px;
+        position: relative;
+        bottom: 0px;
+        
+        display: flex;
+        justify-content: space-between;        
+        padding: 5px 2rem;
+        padding-right: 80px;
+        align-items: center;
+        .brand{
+            width: 50px;
+            height: 50px;
+            background: url("./images/나미.jpg") no-repeat center/cover;
+        }
+
+        @include mobile(){
+            justify-content: center;  
+            .brand{
+                display: none;
+            }
+            .sns{
+                display: none;
+            }
+        }
+
+        @include desktop() {
+            height: 70px;
+        }
+
+
+    }
+    .show_btn{
+        width: 30px;
+        height: 40px;
+        position: absolute;
+        top: 10px;
+        right: 40px;
+
+
+        background-color: white;
+    }
+}
+

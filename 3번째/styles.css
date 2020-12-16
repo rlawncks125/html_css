@@ -104,9 +104,10 @@ ul {
   color: black;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 header {
@@ -122,9 +123,16 @@ header {
 
 main {
   margin-top: 3rem;
-  background-color: violet;
-  height: 200px;
-  width: 100vw;
+  height: 100%;
+}
+
+footer {
+  background-color: #d20b2f;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .nav_cotnet {
@@ -1017,4 +1025,257 @@ main {
   .sec_info ul li::before {
     display: none;
   }
+}
+
+.promotion {
+  margin-top: 0.5rem;
+  padding: 1rem;
+}
+
+.promotion .pm_banner {
+  width: 100%;
+  height: 4.2rem;
+  background-color: #d20b2f;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.promotion .pm_banner .banner_line .banner_logo {
+  width: 100px;
+  height: 50px;
+  background: url("./images/banner_logo.jpg") no-repeat center;
+  position: absolute;
+  top: -5px;
+  left: calc( 50% - 50px);
+  z-index: 1;
+}
+
+.promotion .pm_banner .banner_line::before {
+  content: "";
+  display: block;
+  border-top: 1px solid white;
+  width: 90%;
+  position: relative;
+  top: 15px;
+  margin: 0 auto;
+}
+
+.promotion .pm_banner .banner_line::after {
+  content: "";
+  display: block;
+  border-top: 1px solid white;
+  width: 90%;
+  position: relative;
+  top: -68px;
+  margin: 0 auto;
+}
+
+.promotion .pm_banner .banner_line em {
+  display: block;
+  font-size: 40px;
+  margin-top: 40px;
+  color: white;
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+  .promotion .pm_banner .banner_line::after {
+    top: -58px;
+  }
+  .promotion .pm_banner .banner_line em {
+    font-size: 30px;
+  }
+}
+
+.promotion .pm {
+  width: 100%;
+  height: 80vw;
+}
+
+.promotion .pm .pm_video {
+  width: 100%;
+  height: 50vw;
+  background-color: yellow;
+  margin-top: 0.5rem;
+}
+
+.promotion .pm .pm_banners {
+  height: 30vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.promotion .pm .pm_banners .banner {
+  width: 33.3333%;
+  max-width: 33.33%;
+  margin: 0.4rem 0.2rem;
+  background-color: paleturquoise;
+}
+
+.promotion .pm .pm_banners .banner:nth-child(1) {
+  background: url("./images/배너1.jpg") top/cover no-repeat;
+}
+
+.promotion .pm .pm_banners .banner:nth-child(2) {
+  background: url("./images/배너2.jpg") top/cover no-repeat;
+}
+
+.promotion .pm .pm_banners .banner:nth-child(3) {
+  background: url("./images/배너3.jpg") top/cover no-repeat;
+}
+
+.promotion .pm .pm_banners .banner:nth-child(4) {
+  background: url("./images/배너4.jpg") top/cover no-repeat;
+}
+
+.promotion .pm .pm_banners .banner:nth-last-child(1) {
+  display: none;
+}
+
+@media (min-width: 1180px) {
+  .promotion .pm {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 460px;
+  }
+  .promotion .pm .pm_video {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 60%;
+            flex: 0 0 60%;
+    height: 100%;
+    display: inline-block;
+    margin: 0.4rem 0.2rem;
+  }
+  .promotion .pm .pm_banners {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40%;
+            flex: 0 0 40%;
+    height: 100%;
+    margin-top: 0;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-flow: wrap;
+        flex-flow: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .promotion .pm .pm_banners .banner {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    max-width: 210px;
+    height: 220px;
+  }
+  .promotion .pm .pm_banners .banner:nth-last-child(1) {
+    display: block;
+  }
+}
+
+.up_arrow {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: fixed;
+  right: 20px;
+  bottom: 80px;
+  z-index: 80;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 15px 20px 0 rgba(113, 94, 97, 0.15);
+          box-shadow: 0 15px 20px 0 rgba(113, 94, 97, 0.15);
+}
+
+.footer_content {
+  color: white;
+}
+
+.footer_content .footer_hide_content {
+  width: 100%;
+  height: 80px;
+  background-color: #d20b2f;
+  padding: 4px 15px;
+  font-size: 16px;
+  display: none;
+}
+
+.footer_content .footer_hide_content p a {
+  color: white;
+  cursor: pointer;
+}
+
+.footer_content .footer_hide_content p span {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.footer_content .footer_hide_content.active {
+  display: block;
+}
+
+.footer_content .footer_hide_content::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 1px;
+  background-color: white;
+}
+
+.footer_content .footer_show_content {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  bottom: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5px 2rem;
+  padding-right: 80px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer_content .footer_show_content .brand {
+  width: 50px;
+  height: 50px;
+  background: url("./images/나미.jpg") no-repeat center/cover;
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+  .footer_content .footer_show_content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer_content .footer_show_content .brand {
+    display: none;
+  }
+  .footer_content .footer_show_content .sns {
+    display: none;
+  }
+}
+
+@media (min-width: 1180px) {
+  .footer_content .footer_show_content {
+    height: 70px;
+  }
+}
+
+.footer_content .show_btn {
+  width: 30px;
+  height: 40px;
+  position: absolute;
+  top: 10px;
+  right: 40px;
+  background-color: white;
 }

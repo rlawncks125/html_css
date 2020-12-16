@@ -54,3 +54,21 @@ const swiper = new Swiper('.top_slide', {
       prevEl: '.swiper-button-prev',
     },
   });
+
+
+  // 맨위 버튼 작업
+  const upBtn = document.querySelector(".up_arrow");
+  upBtn.addEventListener("click",()=>{
+    window.scrollTo({
+      top : 0,
+      behavior: 'smooth'
+    }
+    )
+  })
+  // 푸터 show 작업
+const footerBtn = document.querySelector(".show_btn");
+const showfooter= document.querySelector(".footer_hide_content");
+footerBtn.addEventListener("click",()=>{
+  showfooter.classList.toggle("active");
+ window.scrollTo(0,document.body.scrollHeight);
+})
