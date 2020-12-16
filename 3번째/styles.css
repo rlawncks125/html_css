@@ -97,7 +97,8 @@ body {
   font-family: 'Pathway Gothic One', sans-serif;
 }
 
-a, ul {
+a,
+ul {
   padding: 0;
   text-decoration: none;
   color: black;
@@ -608,7 +609,7 @@ main {
   background-color: yellow;
   margin: 0 auto;
   width: 95%;
-  margin-top: -3rem;
+  margin-top: -4rem;
 }
 
 .product_desc .swiper_product {
@@ -712,7 +713,8 @@ main {
   border-radius: 4px;
 }
 
-.product_desc .swiper_product .swiper-button-next, .product_desc .swiper_product .swiper-button-prev {
+.product_desc .swiper_product .swiper-button-next,
+.product_desc .swiper_product .swiper-button-prev {
   top: 30%;
 }
 
@@ -741,7 +743,7 @@ main {
 @media (min-width: 601px) and (max-width: 1180px) {
   .product_desc {
     /* 타블렛PC */
-    height: calc( (80vw/1.5) + 550px);
+    height: calc((80vw/1.5) + 550px);
   }
   .product_desc .swiper_product .swiper-wrapper .swiper-slide .product_img {
     height: 53.33333vw;
@@ -828,7 +830,191 @@ main {
   .product_desc .swiper_product .swiper-wrapper .swiper-slide .product_info .info_dec div p {
     font-size: 0.7rem;
   }
-  .product_desc .swiper_product .swiper-button-next, .product_desc .swiper_product .swiper-button-prev {
+  .product_desc .swiper_product .swiper-button-next,
+  .product_desc .swiper_product .swiper-button-prev {
     top: 50%;
+  }
+}
+
+.sec_info {
+  margin-top: 0.5rem;
+}
+
+.sec_info ul {
+  list-style: none;
+  position: relative;
+}
+
+.sec_info ul li {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+.sec_info ul li:nth-child(1) {
+  background-image: url("./images/영양정보1.jpg");
+}
+
+.sec_info ul li:nth-child(1) a {
+  background: url("./images/정보1.jpg") no-repeat center/cover;
+}
+
+.sec_info ul li:nth-child(2) {
+  background-image: url("./images/영양정보2.jpg");
+}
+
+.sec_info ul li:nth-child(2) a {
+  background: url("./images/정보2.jpg") no-repeat center/cover;
+}
+
+.sec_info ul li:nth-child(3) {
+  background-image: url("./images/영양정보3.jpg");
+}
+
+.sec_info ul li:nth-child(3) a {
+  background: url("./images/정보3.jpg") no-repeat center/cover;
+}
+
+.sec_info ul li:nth-child(4) {
+  background-image: url("./images/영양정보4.jpg");
+}
+
+.sec_info ul li:nth-child(4) a {
+  background: url("./images/정보4.jpg") no-repeat center/cover;
+}
+
+.sec_info ul li a {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+.sec_info ul li a span {
+  color: white;
+  display: inline-block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.sec_info ul li a span button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.sec_info ul li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .1;
+  z-index: 1;
+  background-color: black;
+}
+
+@media (min-width: 0px) and (max-width: 600px) {
+  .sec_info {
+    margin-top: 0;
+    background-color: black;
+  }
+  .sec_info ul li {
+    height: 180px;
+    text-align: left;
+  }
+  .sec_info ul li a {
+    padding: 2rem 1rem;
+    width: 100%;
+    height: 100%;
+    background: none !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1180px) {
+  .sec_info {
+    /* 타블렛PC */
+  }
+  .sec_info ul li {
+    height: 300px;
+    padding: 25px;
+  }
+  .sec_info ul li a {
+    width: 250px;
+    height: 250px;
+    background-color: wheat;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+  .sec_info ul li a span {
+    top: 50px;
+    left: 0px;
+  }
+}
+
+@media (min-width: 1180px) {
+  .sec_info {
+    padding: 1rem;
+  }
+  .sec_info ul {
+    background: url("./images/chicago-690364_1920.jpg") center/cover no-repeat;
+    height: 600px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .sec_info ul li {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+    max-width: 25%;
+    background-size: 0%;
+  }
+  .sec_info ul li a {
+    width: 150px;
+    height: 150px;
+    padding: 25px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-top: 200px;
+    font-size: 0.6rem;
+  }
+  .sec_info ul li a span {
+    position: absolute;
+    left: 0px;
+    top: 160px;
+    color: black;
+  }
+  .sec_info ul li a span button {
+    color: black;
+  }
+  .sec_info ul li:hover {
+    background-position: 15%;
+    background-size: cover;
+  }
+  .sec_info ul li:hover a {
+    width: 250px;
+    height: 250px;
+  }
+  .sec_info ul li:hover a span {
+    position: relative;
+    left: 0px;
+    top: 5px;
+    color: white;
+  }
+  .sec_info ul li:hover a span button {
+    color: white;
+  }
+  .sec_info ul li::before {
+    display: none;
   }
 }
